@@ -15,6 +15,7 @@ import herencia1.EstudiantePresencial;
  * @author reroes
  */
 public class Ejecutor3 {
+
     public static void main(String[] args) {
         // Ingresar por teclado
         // un objeto de tipo Estudiante Distancia si el usuario ingresa 1 como 
@@ -27,67 +28,59 @@ public class Ejecutor3 {
         int opcion, edad, asignaturas, creditos;
         double costoAsignatura, costoCreditos;
         String nombres, apellidos, identificacion;
-        System.out.println("Ingrese la opcion en la que desea ingresar\n"
+        System.out.print("Ingrese nombres: ");
+        nombres = entrada.nextLine();
+        System.out.print("Ingrese apellidos: ");
+        apellidos = entrada.nextLine();
+        System.out.print("Ingrese identificación: ");
+        identificacion = entrada.nextLine();
+        System.out.print("Ingrese edad: ");
+        edad = entrada.nextInt();
+        System.out.print("Ingrese la opcion en la que desea ingresar\n"
                 + "(1) Estudiante Distancia\n"
-                + "(2) Estudiante Presencial");
+                + "(2) Estudiante Presencial\n"
+                + "----> ");
         opcion = entrada.nextInt();
-        
+        entrada.nextLine();
         switch (opcion) {
             case 1:
-                    System.out.println("Ingrese nombres");
-                    nombres = entrada.nextLine();
-                    System.out.println("Ingrese apellidos");
-                    apellidos = entrada.nextLine();
-                    System.out.println("Ingrese identificación");
-                    identificacion = entrada.nextLine();
-                    System.out.println("Ingrese edad");
-                    edad = entrada.nextInt();
-                    System.out.println("Ingrese número de asignaturas");
-                    asignaturas = entrada.nextInt();
-                    System.out.println("Ingrese costo asignatura");
-                    costoAsignatura = entrada.nextDouble();
-                    EstudianteDistancia estudiante = new EstudianteDistancia();
 
-                    estudiante.establecerNombresEstudiante(nombres);
-                    estudiante.establecerApellidoEstudiante(apellidos);
-                    estudiante.establecerEdadEstudiante(edad);
-                    estudiante.establecerIdentificacionEstudiante(identificacion);
-                    estudiante.establecerNumeroAsginaturas(asignaturas);
-                    estudiante.establecerCostoAsignatura(costoAsignatura);
-                    estudiante.calcularMatriculaDistancia();
-                    System.out.printf("%s\n", estudiante);
+                System.out.print("Ingrese número de asignaturas: ");
+                asignaturas = entrada.nextInt();
+                System.out.print("Ingrese costo asignatura: $");
+                costoAsignatura = entrada.nextDouble();
+                EstudianteDistancia estudiante = new EstudianteDistancia();
+
+                estudiante.establecerNombresEstudiante(nombres);
+                estudiante.establecerApellidoEstudiante(apellidos);
+                estudiante.establecerEdadEstudiante(edad);
+                estudiante.establecerIdentificacionEstudiante(identificacion);
+                estudiante.establecerNumeroAsginaturas(asignaturas);
+                estudiante.establecerCostoAsignatura(costoAsignatura);
+                estudiante.calcularMatriculaDistancia();
+                System.out.printf("%s\n", estudiante);
                 break;
             case 2:
-                    System.out.println("Ingrese nombres");
-                    nombres = entrada.nextLine();
-                    System.out.println("Ingrese apellidos");
-                    apellidos = entrada.nextLine();
-                    System.out.println("Ingrese identificación");
-                    identificacion = entrada.nextLine();
-                    System.out.println("Ingrese edad");
-                    edad = entrada.nextInt();
-                    System.out.println("Ingrese número de creditos");
-                    creditos = entrada.nextInt();
-                    System.out.println("Ingrese costo creditos");
-                    costoCreditos = entrada.nextDouble();
-                    
-                    EstudiantePresencial estudiante1 = new EstudiantePresencial();
-        
-                    estudiante1.establecerNombresEstudiante(nombres);
-                    estudiante1.establecerApellidoEstudiante(apellidos);
-                    estudiante1.establecerEdadEstudiante(edad);
-                    estudiante1.establecerIdentificacionEstudiante(identificacion);
-                    estudiante1.establecerNumeroCreditos(creditos);
-                    estudiante1.establecerCostoCredito(costoCreditos);
-                    estudiante1.calcularMatriculaPresencial();
-                    System.out.printf("%s\n", estudiante1);
+                
+                System.out.print("Ingrese número de creditos: ");
+                creditos = entrada.nextInt();
+                System.out.print("Ingrese costo creditos: $");
+                costoCreditos = entrada.nextDouble();
+
+                EstudiantePresencial estudiante1 = new EstudiantePresencial();
+
+                estudiante1.establecerNombresEstudiante(nombres);
+                estudiante1.establecerApellidoEstudiante(apellidos);
+                estudiante1.establecerEdadEstudiante(edad);
+                estudiante1.establecerIdentificacionEstudiante(identificacion);
+                estudiante1.establecerNumeroCreditos(creditos);
+                estudiante1.establecerCostoCredito(costoCreditos);
+                estudiante1.calcularMatriculaPresencial();
+                System.out.printf("%s\n", estudiante1);
                 break;
             default:
                 throw new AssertionError();
         }
-        
-        
-        
-        
+
     }
 }
